@@ -1,0 +1,14 @@
+name: Starfighter
+description: "Fight in the sky"
+version: 1.0
+api-version: 1.18
+main: de.zevyx.starfighter.Starfighter
+commands:
+  debug:
+    description: "Debug Command"
+    executor: de.zevyx.starfighter.Starfighter
+    tabCompleter: de.zevyx.starfighter.Starfighter
+  setup:
+    description: "Setup Command"
+    executor: de.zevyx.starfighter.Starfighter
+    tabCompleter: de.zevyx.starfighter.Starfighter
