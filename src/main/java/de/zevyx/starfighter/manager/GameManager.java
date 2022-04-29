@@ -20,6 +20,9 @@ public class GameManager {
     public void startGame() {
         Starfighter.getInstance().getGameManager().setGameState(GameState.PLAYING);
         for(Player all : Bukkit.getOnlinePlayers()) {
+
+            Starfighter.getInstance().getEconomyManager().initializePlayer(all);
+
             all.getInventory().setItem(2, new ItemBuilder(Material.STICK).setName("§bLaser Blaster").build());
             all.getInventory().setItem(4, new ItemBuilder(Material.BARRIER).setName("§cKein Gadget").build());
             all.getInventory().setItem(6, new ItemBuilder(Material.CHEST).setName("§bShop").build());
