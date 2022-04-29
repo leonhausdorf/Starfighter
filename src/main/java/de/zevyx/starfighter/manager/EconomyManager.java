@@ -43,4 +43,27 @@ public class EconomyManager {
         save();
     }
 
+    public Integer getBalance(Player player) {
+        return config.getInt(player.getName() + ".balance");
+    }
+
+    public void setBalance(Player player, Integer amount) {
+        config.set(player.getName() + ".balance", amount);
+        save();
+    }
+
+    public void addBalance(Player player, Integer amount) {
+        config.set(player.getName() + ".balance", getBalance(player) + amount);
+        save();
+    }
+
+    public void removeBalance(Player player, Integer amount) {
+        config.set(player.getName() + ".balance", getBalance(player) - amount);
+        save();
+    }
+
+    public boolean hasEnough(Player player, Integer amount) {
+        return getBalance(player) >= amount;
+    }
+
 }
