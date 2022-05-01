@@ -20,6 +20,7 @@ public class Starfighter extends JavaPlugin {
     private InventoryManager inventoryManager;
     private GadgetManager gadgetManager;
     private EconomyManager economyManager;
+    private MessageManager messageManager;
 
     @Override
     public void onEnable() {
@@ -36,6 +37,7 @@ public class Starfighter extends JavaPlugin {
         inventoryManager = new InventoryManager();
         gadgetManager = new GadgetManager();
         economyManager = new EconomyManager();
+        messageManager = new MessageManager();
 
         Bukkit.getPluginManager().registerEvents(new ConnectListener(), this);
         Bukkit.getPluginManager().registerEvents(new DamageListener(), this);
@@ -92,5 +94,9 @@ public class Starfighter extends JavaPlugin {
 
     public EconomyManager getEconomyManager() {
         return economyManager;
+    }
+
+    public MessageManager getMessageManager() {
+        return messageManager;
     }
 }

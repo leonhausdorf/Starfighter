@@ -33,6 +33,8 @@ public class GadgetManager {
         fw2.setFireworkMeta(fwm);
         fw2.detonate();
 
+        location.getWorld().spawnParticle(Particle.ELECTRIC_SPARK, location, 20, 6, 6, 6, 0.1);
+
         for(Player all : Bukkit.getOnlinePlayers()) {
             if(location.distance(all.getLocation()) < 12) {
                 empPlayers.add(all);
